@@ -1,14 +1,13 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int countWays(int n) {
-    vector<int> coins = {50, 100, 200};
-    vector<long long> dp(n + 1, 0);
-    dp[0] = 1; 
-    for (int coin : coins) {
-        for (int amount = coin; amount <= n; ++amount) {
-            dp[amount] += dp[amount - coin];
+    vector<int> tien = {50, 100, 200};
+    vector<long long> dp(n + 1, 0); //tao n+1 phan tu vector, ptu bat dau co gtri 0
+    dp[0] = 1; // co 1 cach de tra gia tien la 0  
+    for (int i : tien) {
+        for (int gia = i; gia <= n; ++gia) {
+            dp[gia] += dp[gia - i];
         }
     }
 
@@ -17,9 +16,8 @@ int countWays(int n) {
 
 int main() {
     int n;
-    cout << "The price: ";
     cin >> n;
 
-    cout << "Way to pay: " << countWays(n) << endl;
+    cout <<countWays(n);
     return 0;
 }

@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string multiply(string a, int b) {
-	// nguyen la phan chua duoc push vao
+string Nhan(string a, int b) {
+	//luu phan nho khi nhan
     int nguyen = 0;
+    //luu ket qua tam thoi
     string du = "";
     for (int i = (int)a.size() - 1; i >= 0; i--) {
         int tinh = (a[i] - '0') * b + nguyen;
@@ -31,7 +32,7 @@ int main() {
 
     string result = "1";
     for (int i = 1; i <= a; i++) {
-        result = multiply(result, n - i + 1);
+        result = Nhan(result, n - i + 1);
     }
 
     cout << result;

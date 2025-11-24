@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string multiply(string a, int b) {
-	//nguyen la phan chuc cua phep nhan
+string Nhan(string a, int b) {
+	//luu phan nho khi nhan
     int nguyen = 0;
-    //du la phan don vi cua phep nhan
+    //luu ket qua tam thoi
     string du = "";
     for (int i = (int)a.size() - 1; i >= 0; i--) {
         int tinh = (a[i] - '0') * b + nguyen;
@@ -22,7 +22,7 @@ string multiply(string a, int b) {
 }
 
 
-string divide(string a, int b) {
+string Chia(string a, int b) {
     string du = "";
     long long duBC = 0;
     for (char c : a) {
@@ -49,8 +49,8 @@ int main() {
 
     string result = "1";
     for (int i = 1; i <= a; i++) {
-        result = multiply(result, n - i + 1);
-        result = divide(result, i);
+        result = Nhan(result, n - i + 1);
+        result = Chia(result, i);
     }
 
     cout << result;
