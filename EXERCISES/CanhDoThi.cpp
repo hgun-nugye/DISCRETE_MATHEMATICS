@@ -26,8 +26,8 @@ int main() {
         // Đếm số cạnh trong đồ thị vô hướng
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
-                if (maTranKe[i][j] == 1) {
-                    soCanh++;
+                if (maTranKe[i][j] !=0) {
+                    soCanh+=maTranKe[i][j];
                 }
             }
         }
@@ -35,8 +35,8 @@ int main() {
         // Đếm số cạnh trong đồ thị có hướng
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (maTranKe[i][j] == 1) {
-                    soCanh++;
+                if (maTranKe[i][j] !=0) {
+                     soCanh+=maTranKe[i][j];
                 }
             }
         }

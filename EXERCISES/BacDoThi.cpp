@@ -28,10 +28,10 @@ int main() {
         vector<int> bac(n, 0);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (maTranKe[i][j] == 1) bac[i]++;
+                if (maTranKe[i][j] != 0) bac[i]+=maTranKe[i][j];
             }
         }
-        // In bậc các đỉnh, cách nhau bằng dấu ;
+       
         for (int i = 0; i < n; i++) {
             cout << bac[i];
             if (i != n - 1) cout << ";";
@@ -44,21 +44,18 @@ int main() {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (maTranKe[i][j] == 1) {
-                    banBacRa[i]++;
-                    banBacVao[j]++;
+                if (maTranKe[i][j] != 0) {
+                    banBacRa[i]+=maTranKe[i][j];
+                    banBacVao[j]+=maTranKe[i][j];
                 }
             }
         }
-
-        // In bán bậc ra
+       
         for (int i = 0; i < n; i++) {
             cout << banBacRa[i];
             if (i != n - 1) cout << ";";
         }
         cout << "\n";
-
-        // In bán bậc vào
         for (int i = 0; i < n; i++) {
             cout << banBacVao[i];
             if (i != n - 1) cout << ";";
